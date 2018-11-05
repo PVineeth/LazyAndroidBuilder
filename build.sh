@@ -173,10 +173,14 @@ for (( i=0;i<$ELEMENTS;i++)); do
 done
 }
 
+# Execution starts here
+
 if [[ $1 = "help" ]]; then
     help
 elif [[ $1 = "reset" ]]; then
     reset
+elif [[ $1 = "update" ]]; then
+    update
 else
     first_run
 fi
