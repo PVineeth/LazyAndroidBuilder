@@ -166,7 +166,7 @@ for (( i=0;i<$ELEMENTS;i++)); do
     fi
 
     if [[ ${args[${i}]} = "update" ]]; then
-        if [[ ! $1 = "update" ]]; then
+        if [[ $ELEMENTS -ne 1 ]]; then
             update_script
         fi
     fi
