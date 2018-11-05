@@ -107,13 +107,14 @@ update_script(){
     rm -rf .tmp_labscript.sh
     echo "LazyAndroidBuilder Updater"
     wget --output-document=.tmp_labscript.sh -q https://raw.githubusercontent.com/PVineeth/LazyAndroidBuilder/master/build.sh
-    cp .tmp_labscript.sh $0
+    cp .tmp_labscript.sh build.sh
     rm -rf .tmp_labscript.sh
     clrscr
     printf "%s\n" "${mag}Done Updating!${end}"
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     # Running the updated script after it updates itself
-    $0
+    chmod a+x build.sh
+    ./build.sh
 }
 
 help() {
