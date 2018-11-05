@@ -112,6 +112,7 @@ update_script(){
     rm -rf .tmp_labscript.sh
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     printf "%s\n" "${mag}Done Updating!${end}"
+    echo -e "\nRun the script again."
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     # Sets permission automatically
     chmod a+x build.sh
@@ -165,7 +166,9 @@ for (( i=0;i<$ELEMENTS;i++)); do
     fi
 
     if [[ ${args[${i}]} = "update" ]]; then
-        update_script
+        if [[ ! $1 = "update" ]]; then
+            update_script
+        fi
     fi
 
     if [[ ${args[${i}]} = "help" ]]; then
