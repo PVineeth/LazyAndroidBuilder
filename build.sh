@@ -106,6 +106,7 @@ reset() {
 update_script(){
     rm -rf .tmp_labscript.sh
     echo "LazyAndroidBuilder Updater"
+    cd $SCRIPT_DIR
     wget --output-document=.tmp_labscript.sh -q https://raw.githubusercontent.com/PVineeth/LazyAndroidBuilder/master/build.sh
     cp .tmp_labscript.sh build.sh
     rm -rf .tmp_labscript.sh
