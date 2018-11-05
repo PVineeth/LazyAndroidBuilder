@@ -1,11 +1,11 @@
-LazyAndroidBuilder v0.1
+LazyAndroidBuilder v0.2
 
 ```bash
 chmod a+x build.sh
 ```
 
-Building the ROM
+Checkout the help section in the build script
 
 ```bash
-./build.sh rom
+./build.sh help
 ```
