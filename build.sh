@@ -113,9 +113,8 @@ update_script(){
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     printf "%s\n" "${mag}Done Updating!${end}"
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-    # Running the updated script after it updates itself
+    # Sets permission automatically
     chmod a+x build.sh
-    ./build.sh
 }
 
 help() {
