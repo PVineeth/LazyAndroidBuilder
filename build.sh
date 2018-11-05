@@ -110,7 +110,7 @@ update_script(){
     wget --output-document=.tmp_labscript.sh -q https://raw.githubusercontent.com/PVineeth/LazyAndroidBuilder/master/build.sh
     cp .tmp_labscript.sh build.sh
     rm -rf .tmp_labscript.sh
-    clrscr
+    printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     printf "%s\n" "${mag}Done Updating!${end}"
     printf '%*s\n\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
     # Running the updated script after it updates itself
@@ -182,7 +182,7 @@ if [[ $1 = "help" ]]; then
 elif [[ $1 = "reset" ]]; then
     reset
 elif [[ $1 = "update" ]]; then
-    update
+    update_script
 else
     first_run
 fi
