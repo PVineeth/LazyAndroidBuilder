@@ -133,7 +133,7 @@ for (( i=0;i<$ELEMENTS;i++)); do
 
     if [[ ${args[${i}]} = "sync" ]]; then
         echo "Syncing Sources..."
-        #repo sync --force-sync
+        repo sync --force-sync
     fi
     
     if [[ ${args[${i}]} = "kernel" ]]; then
