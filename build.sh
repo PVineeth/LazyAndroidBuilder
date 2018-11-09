@@ -49,8 +49,8 @@ set_env() {
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 export LC_ALL=C
 export ALLOW_MISSING_DEPENDENCIES=true
-# export KBUILD_BUILD_USER=vineethp-linuxninja
-# export KBUILD_BUILD_HOST=vineethp-linux-ninja
+export KBUILD_BUILD_USER=vineethp-linuxninja
+export KBUILD_BUILD_HOST=vineethp-linux-ninja
 }
 
 device_name() {
@@ -154,7 +154,7 @@ for (( i=0;i<$ELEMENTS;i++)); do
         clean
         source build/envsetup.sh
         croot
-        brunch lineage_{$DEVICE_NAME}-eng
+        brunch lineage_$DEVICE_NAME-eng
     fi
 
     if [[ ${args[${i}]} = "reset" ]]; then
