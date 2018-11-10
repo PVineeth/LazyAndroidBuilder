@@ -158,6 +158,7 @@ for (( i=0;i<$ELEMENTS;i++)); do
     fi
 
     if [[ ${args[${i}]} = "setupas" ]]; then
+	source build/envsetup.sh
         make idegen && development/tools/idegen/idegen.sh
     fi
 
