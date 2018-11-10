@@ -157,6 +157,10 @@ for (( i=0;i<$ELEMENTS;i++)); do
         brunch lineage_$DEVICE_NAME-eng
     fi
 
+    if [[ ${args[${i}]} = "setupas" ]]; then
+        make idegen && development/tools/idegen/idegen.sh
+    fi
+
     if [[ ${args[${i}]} = "reset" ]]; then
         reset
     fi
